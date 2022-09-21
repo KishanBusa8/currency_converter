@@ -1,4 +1,6 @@
-// all available currency
+/// [Currency] class provide all the currencies
+/// [Currency.allCurrencyWithCountries] is the static array for the information about country and its currency name
+///
 class Currency {
   static const String inchNetwork = "1inch";
   static const String aave = "aave";
