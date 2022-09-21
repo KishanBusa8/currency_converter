@@ -1,4 +1,5 @@
-import 'package:http/http.dart' as http;
+import 'package:flutter/foundation.dart';
+import 'package:http/http.dart';
 
 class ApiService {
   // url
@@ -6,16 +7,18 @@ class ApiService {
       "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/";
 
 // get amount function used for call api and return value
-  static Future<http.Response?> getConvertedAmount(url) async {
+  static Future<Response?> getConvertedAmount(url) async {
     try {
-      print(url);
 //cal api
-      final response = await http.get(Uri.parse(url));
+      final response = await get(Uri.parse(url));
 // get response
       return response;
     } catch (e) {
 // catch er
-      print("fetch get err $e");
+      if (kDebugMode) {
+        print("fetch get err $e");
+      }
     }
+    return null;
   }
 }
