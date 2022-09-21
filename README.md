@@ -11,29 +11,42 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+DESCRIPTION: A Simple Flutter plugin for converting currencies and crypto currencies live!
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+1. Convert currencies from one to another by live rates.
+2. Convert crypto currencies too.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+*Install Package to your pubspec.yaml file*
+
+```
+currency_converter: ^0.0.1;
+```
+
+*Import library*
+
+```dart
+import 'package:currency_converter/Currency.dart';
+import 'package:currency_converter/currency_converter.dart';
+```
+
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Import package to your file where you want to use it.
 
-```dart
-const like = 'sample';
+```
+    var usdConvert = await CurrencyConverter.convert(
+    from: Currency.usd, to: Currency.inr, amount: 1);
 ```
 
-## Additional information
+- for more checkout the example file.
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+## Issues And feedback
+- Please file specific issues, bugs, or feature requests in our [issue tracker](https://github.com/KishanBusa8/currency_converter/issues).
+
+## Authors
+- [Kishan Busa](https://github.com/KishanBusa8)
