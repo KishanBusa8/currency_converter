@@ -2,3 +2,7 @@
 
 - Add conversation of all currency
 - Add example file
+
+## 0.0.2
+
+- bug fixes

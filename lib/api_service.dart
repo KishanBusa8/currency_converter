@@ -1,6 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart';
 
+///[ApiService] class is used for the call the api from the server
+///[ENDPOINT] is the server url
+///[getConvertedAmount] method will be used for converting currencies.
+
 class ApiService {
   // url
   static const String ENDPOINT =
