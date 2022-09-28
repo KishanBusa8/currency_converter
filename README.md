@@ -38,9 +38,14 @@ import 'package:currency_converter/currency_converter.dart';
 
 Import package to your file where you want to use it.
 
-```
-    var usdConvert = await CurrencyConverter.convert(
-    from: Currency.usd, to: Currency.inr, amount: 1);
+```dart
+     Currency myCurrency = await CurrencyConverter.getMyCurrency();
+     var usdConvert = await CurrencyConverter.convert(
+      from: Currency.usd,
+      to: myCurrency,
+      amount: 1,
+    );
+
 ```
 
 - for more checkout the example file.
