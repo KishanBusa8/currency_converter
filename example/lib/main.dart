@@ -1,4 +1,4 @@
-import 'package:currency_converter/Currency.dart';
+import 'package:currency_converter/currency.dart';
 import 'package:currency_converter/currency_converter.dart';
 import 'package:flutter/material.dart';
 
@@ -26,8 +26,12 @@ class _MyAppState extends State<MyApp> {
 
 // call function to convert
   void convert() async {
+    Currency myCurrency = await CurrencyConverter.getMyCurrency();
     var usdConvert = await CurrencyConverter.convert(
-        from: Currency.usd, to: Currency.inr, amount: 1);
+      from: Currency.usd,
+      to: myCurrency,
+      amount: 1,
+    );
     setState(() {
       usdToInr = usdConvert.toString();
     });
@@ -56,7 +60,7 @@ class _MyAppState extends State<MyApp> {
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
                     ),
                     Text(
-                      "$usdToInr ${Currency.inr.toUpperCase()}",
+                      "$usdToInr ${Currency.inr.name.toUpperCase()}",
                       style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 22,
