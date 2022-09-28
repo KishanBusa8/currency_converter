@@ -1,274 +1,278 @@
-/// [Currency] class provide all the currencies
-/// [Currency.allCurrencyWithCountries] is the static array for the information about country and its currency name
-///
-class Currency {
-  static const String inchNetwork = "1inch";
-  static const String aave = "aave";
-  static const String ada = "ada";
-  static const String aed = "aed";
-  static const String afn = "afn";
-  static const String algo = "algo";
-  static const String all = "all";
-  static const String amd = "amd";
-  static const String amp = "amp";
-  static const String ang = "ang";
-  static const String aoa = "aoa";
-  static const String ar = "ar";
-  static const String ars = "ars";
-  static const String atom = "atom";
-  static const String aud = "aud";
-  static const String avax = "avax";
-  static const String awg = "awg";
-  static const String axs = "axs";
-  static const String azn = "azn";
-  static const String bam = "bam";
-  static const String bat = "bat";
-  static const String bbd = "bbd";
-  static const String bch = "bch";
-  static const String bdt = "bdt";
-  static const String bgn = "bgn";
-  static const String bhd = "bhd";
-  static const String bif = "bif";
-  static const String bmd = "bmd";
-  static const String bnb = "bnb";
-  static const String bnd = "bnd";
-  static const String bob = "bob";
-  static const String brl = "brl";
-  static const String bsd = "bsd";
-  static const String bsv = "bsv";
-  static const String btc = "btc";
-  static const String btcb = "btcb";
-  static const String btg = "btg";
-  static const String btn = "btn";
-  static const String busd = "busd";
-  static const String bwp = "bwp";
-  static const String byn = "byn";
-  static const String byr = "byr";
-  static const String bzd = "bzd";
-  static const String cad = "cad";
-  static const String cake = "cake";
-  static const String cdf = "cdf";
-  static const String celo = "celo";
-  static const String chf = "chf";
-  static const String chz = "chz";
-  static const String clf = "clf";
-  static const String clp = "clp";
-  static const String cny = "cny";
-  static const String comp = "comp";
-  static const String cop = "cop";
-  static const String crc = "crc";
-  static const String cro = "cro";
-  static const String crv = "crv";
-  static const String cuc = "cuc";
-  static const String cup = "cup";
-  static const String cve = "cve";
-  static const String cvx = "cvx";
-  static const String czk = "czk";
-  static const String dai = "dai";
-  static const String dash = "dash";
-  static const String dcr = "dcr";
-  static const String dfi = "dfi";
-  static const String djf = "djf";
-  static const String dkk = "dkk";
-  static const String doge = "doge";
-  static const String dop = "dop";
-  static const String dot = "dot";
-  static const String dzd = "dzd";
-  static const String egld = "egld";
-  static const String egp = "egp";
-  static const String enj = "enj";
-  static const String eos = "eos";
-  static const String ern = "ern";
-  static const String etb = "etb";
-  static const String etc = "etc";
-  static const String eth = "eth";
-  static const String eur = "eur";
-  static const String fei = "fei";
-  static const String fil = "fil";
-  static const String fjd = "fjd";
-  static const String fkp = "fkp";
-  static const String flow = "flow";
-  static const String frax = "frax";
-  static const String ftm = "ftm";
-  static const String ftt = "ftt";
-  static const String gala = "gala";
-  static const String gbp = "gbp";
-  static const String gel = "gel";
-  static const String ggp = "ggp";
-  static const String ghs = "ghs";
-  static const String gip = "gip";
-  static const String gmd = "gmd";
-  static const String gnf = "gnf";
-  static const String gno = "gno";
-  static const String grt = "grt";
-  static const String gt = "gt";
-  static const String gtq = "gtq";
-  static const String gyd = "gyd";
-  static const String hbar = "hbar";
-  static const String hkd = "hkd";
-  static const String hnt = "hnt";
-  static const String hot = "hot";
-  static const String hrk = "hrk";
-  static const String ht = "ht";
-  static const String htg = "htg";
-  static const String huf = "huf";
-  static const String icp = "icp";
-  static const String idr = "idr";
-  static const String ils = "ils";
-  static const String imp = "imp";
-  static const String inj = "inj";
-  static const String inr = "inr";
-  static const String iqd = "iqd";
-  static const String irr = "irr";
-  static const String isk = "isk";
-  static const String jep = "jep";
-  static const String jmd = "jmd";
-  static const String jod = "jod";
-  static const String jpy = "jpy";
-  static const String kava = "kava";
-  static const String kcs = "kcs";
-  static const String kda = "kda";
-  static const String kes = "kes";
-  static const String kgs = "kgs";
-  static const String khr = "khr";
-  static const String klay = "klay";
-  static const String kmf = "kmf";
-  static const String knc = "knc";
-  static const String kpw = "kpw";
-  static const String krw = "krw";
-  static const String ksm = "ksm";
-  static const String kwd = "kwd";
-  static const String kyd = "kyd";
-  static const String kzt = "kzt";
-  static const String lyd = "lyd";
-  static const String lvl = "lvl";
-  static const String luna = "luna";
-  static const String ltl = "ltl";
-  static const String ltc = "ltc";
-  static const String lsl = "lsl";
-  static const String lrd = "lrd";
-  static const String lrc = "lrc";
-  static const String lkr = "lkr";
-  static const String link = "link";
-  static const String leo = "leo";
-  static const String lbp = "lbp";
-  static const String lak = "lak";
-  static const String mzn = "mzn";
-  static const String myr = "myr";
-  static const String mxn = "mxn";
-  static const String mwk = "mwk";
-  static const String mvr = "mvr";
-  static const String mur = "mur";
-  static const String mro = "mro";
-  static const String mop = "mop";
-  static const String mnt = "mnt";
-  static const String mmk = "mmk";
-  static const String mkr = "mkr";
-  static const String mkd = "mkd";
-  static const String miota = "miota";
-  static const String mina = "mina";
-  static const String mga = "mga";
-  static const String mdl = "mdl";
-  static const String matic = "matic";
-  static const String mana = "mana";
-  static const String mad = "mad";
-  static const String nzd = "nzd";
-  static const String npr = "npr";
-  static const String nok = "nok";
-  static const String nio = "nio";
-  static const String ngn = "ngn";
-  static const String nexo = "nexo";
-  static const String neo = "neo";
-  static const String near = "near";
-  static const String nad = "nad";
-  static const String paxg = "paxg";
-  static const String pab = "pab";
-  static const String one = "one";
-  static const String omr = "omr";
-  static const String okb = "okb";
-  static const String pyg = "pyg";
-  static const String pln = "pln";
-  static const String pkr = "pkr";
-  static const String php = "php";
-  static const String pgk = "pgk";
-  static const String pen = "pen";
-  static const String qtum = "qtum";
-  static const String qnt = "qnt";
-  static const String qar = "qar";
-  static const String rwf = "rwf";
-  static const String rune = "rune";
-  static const String rub = "rub";
-  static const String rsd = "rsd";
-  static const String ron = "ron";
-  static const String sos = "sos";
-  static const String sol = "sol";
-  static const String sll = "sll";
-  static const String shp = "shp";
-  static const String shib = "shib";
-  static const String sgd = "sgd";
-  static const String sek = "sek";
-  static const String sdg = "sdg";
-  static const String scr = "scr";
-  static const String sbd = "sbd";
-  static const String sar = "sar";
-  static const String sand = "sand";
-  static const String szl = "szl";
-  static const String syp = "syp";
-  static const String svc = "svc";
-  static const String stx = "stx";
-  static const String std = "std";
-  static const String srd = "srd";
-  static const String tzs = "tzs";
-  static const String twd = "twd";
-  static const String tusd = "tusd";
-  static const String ttt = "ttt";
-  static const String ttd = "ttd";
-  static const String turkisLira = "try";
-  static const String trx = "trx";
-  static const String top = "top";
-  static const String tnd = "tnd";
-  static const String tmt = "tmt";
-  static const String tjs = "tjs";
-  static const String theta = "theta";
-  static const String thb = "thb";
-  static const String uzs = "uzs";
-  static const String uyu = "uyu";
-  static const String usdt = "usdt";
-  static const String usdp = "usdp";
-  static const String usdc = "usdc";
-  static const String usd = "usd";
-  static const String uni = "uni";
-  static const String ugx = "ugx";
-  static const String uah = "uah";
-  static const String vuv = "vuv";
-  static const String vnd = "vnd";
-  static const String vet = "vet";
-  static const String wst = "wst";
-  static const String wemix = "wemix";
-  static const String wbtc = "wbtc";
-  static const String waves = "waves";
-  static const String xtz = "xtz";
-  static const String xrp = "xrp";
-  static const String xpf = "xpf";
-  static const String xof = "xof";
-  static const String xmr = "xmr";
-  static const String xlm = "xlm";
-  static const String xem = "xem";
-  static const String xec = "xec";
-  static const String xdr = "xdr";
-  static const String xdc = "xdc";
-  static const String xcd = "xcd";
-  static const String xau = "xau";
-  static const String xag = "xag";
-  static const String xaf = "xaf";
-  static const String yer = "yer";
-  static const String zwl = "zwl";
-  static const String zmw = "zmw";
-  static const String zmk = "zmk";
-  static const String zil = "zil";
-  static const String zec = "zec";
-  static const String zar = "zar";
+/// [Currency] enum provide all the currencies
+/// [AllCurrency] class provide all the currencies
+/// [AllCurrency.allCurrencyWithCountries] is the static array for the information about country and its currency name
 
+enum Currency {
+  inchNetwork,
+  aave,
+  ada,
+  aed,
+  afn,
+  algo,
+  all,
+  amd,
+  amp,
+  ang,
+  aoa,
+  ar,
+  ars,
+  atom,
+  aud,
+  avax,
+  awg,
+  axs,
+  azn,
+  bam,
+  bat,
+  bbd,
+  bch,
+  bdt,
+  bgn,
+  bhd,
+  bif,
+  bmd,
+  bnb,
+  bnd,
+  bob,
+  brl,
+  bsd,
+  bsv,
+  btc,
+  btcb,
+  btg,
+  btn,
+  busd,
+  bwp,
+  byn,
+  byr,
+  bzd,
+  cad,
+  cake,
+  cdf,
+  celo,
+  chf,
+  chz,
+  clf,
+  clp,
+  cny,
+  comp,
+  cop,
+  crc,
+  cro,
+  crv,
+  cuc,
+  cup,
+  cve,
+  cvx,
+  czk,
+  dai,
+  dash,
+  dcr,
+  dfi,
+  djf,
+  dkk,
+  doge,
+  dop,
+  dot,
+  dzd,
+  egld,
+  egp,
+  enj,
+  eos,
+  ern,
+  etb,
+  etc,
+  eth,
+  eur,
+  fei,
+  fil,
+  fjd,
+  fkp,
+  flow,
+  frax,
+  ftm,
+  ftt,
+  gala,
+  gbp,
+  gel,
+  ggp,
+  ghs,
+  gip,
+  gmd,
+  gnf,
+  gno,
+  grt,
+  gt,
+  gtq,
+  gyd,
+  hbar,
+  hkd,
+  hnt,
+  hot,
+  hrk,
+  ht,
+  htg,
+  huf,
+  icp,
+  idr,
+  ils,
+  imp,
+  inj,
+  inr,
+  iqd,
+  irr,
+  isk,
+  jep,
+  jmd,
+  jod,
+  jpy,
+  kava,
+  kcs,
+  kda,
+  kes,
+  kgs,
+  khr,
+  klay,
+  kmf,
+  knc,
+  kpw,
+  krw,
+  ksm,
+  kwd,
+  kyd,
+  kzt,
+  lyd,
+  lvl,
+  luna,
+  ltl,
+  ltc,
+  lsl,
+  lrd,
+  lrc,
+  lkr,
+  link,
+  leo,
+  lbp,
+  lak,
+  mzn,
+  myr,
+  mxn,
+  mwk,
+  mvr,
+  mur,
+  mro,
+  mop,
+  mnt,
+  mmk,
+  mkr,
+  mkd,
+  miota,
+  mina,
+  mga,
+  mdl,
+  matic,
+  mana,
+  mad,
+  nzd,
+  npr,
+  nok,
+  nio,
+  ngn,
+  nexo,
+  neo,
+  near,
+  nad,
+  paxg,
+  pab,
+  one,
+  omr,
+  okb,
+  pyg,
+  pln,
+  pkr,
+  php,
+  pgk,
+  pen,
+  qtum,
+  qnt,
+  qar,
+  rwf,
+  rune,
+  rub,
+  rsd,
+  ron,
+  sos,
+  sol,
+  sll,
+  shp,
+  shib,
+  sgd,
+  sek,
+  sdg,
+  scr,
+  sbd,
+  sar,
+  sand,
+  szl,
+  syp,
+  svc,
+  stx,
+  std,
+  srd,
+  tzs,
+  twd,
+  tusd,
+  ttt,
+  ttd,
+  turkisL,
+  ira,
+  trx,
+  top,
+  tnd,
+  tmt,
+  tjs,
+  theta,
+  thb,
+  uzs,
+  uyu,
+  usdt,
+  usdp,
+  usdc,
+  usd,
+  uni,
+  ugx,
+  uah,
+  vuv,
+  vnd,
+  vet,
+  wst,
+  wemix,
+  wbtc,
+  waves,
+  xtz,
+  xrp,
+  xpf,
+  xof,
+  xmr,
+  xlm,
+  xem,
+  xec,
+  xdr,
+  xdc,
+  xcd,
+  xau,
+  xag,
+  xaf,
+  yer,
+  zwl,
+  zmw,
+  zmk,
+  zil,
+  zec,
+  zar,
+}
+
+class AllCurrency {
   static const allCurrencyWithCountries = {
     "1inch": "1inch Network",
     "aave": "Aave",

@@ -6,3 +6,7 @@
 ## 0.0.2
 
 - bug fixes
+
+## 0.0.3
+
+- Now you can retrieve your local currency.
