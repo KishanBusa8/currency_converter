@@ -10,3 +10,7 @@
 ## 0.0.3
 
 - Now you can retrieve your local currency.
+
+## 0.0.4
+
+- Solve type conversion error
