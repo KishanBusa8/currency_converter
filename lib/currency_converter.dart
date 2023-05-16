@@ -28,7 +28,7 @@ class CurrencyConverter {
       /// get the latest currency rate
       Response? resp = (await ApiService.getConvertedAmount(url));
       if (resp != null) {
-        double unitValue = double.parse(jsonDecode(resp.body)[to].toString());
+        double unitValue = double.parse(jsonDecode(resp.body)[to.name].toString());
         value = amount * unitValue;
       }
       return double.parse(value.toStringAsFixed(2));
