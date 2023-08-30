@@ -14,3 +14,7 @@
 ## 0.0.4
 
 - Solve type conversion error
+
+## 0.0.5
+
+- Version updates

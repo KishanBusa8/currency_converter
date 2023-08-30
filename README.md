@@ -23,7 +23,7 @@ DESCRIPTION: A Simple Flutter plugin for converting currencies and crypto curren
 *Install Package to your pubspec.yaml file*
 
 ```
-currency_converter: ^0.0.1;
+currency_converter: ^0.0.5;
 ```
 
 *Import library*
