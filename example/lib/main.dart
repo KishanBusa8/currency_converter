@@ -31,6 +31,7 @@ class _MyAppState extends State<MyApp> {
       from: Currency.usd,
       to: myCurrency,
       amount: 1,
+      withoutRounding : false,
     );
     setState(() {
       usdToInr = usdConvert.toString();

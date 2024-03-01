@@ -55,7 +55,3 @@ Import package to your file where you want to use it.
 
 ## Authors
 - [Kishan Busa](https://github.com/KishanBusa8)
-
-## Contributor
-- [Kishan Busa](https://github.com/KishanBusa8)
-- [Harsh patel](https://github.com/HarshuPatel007)
