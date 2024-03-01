@@ -18,3 +18,7 @@
 ## 0.0.5
 
 - Version updates
+
+## 0.0.6
+
+- Added "withoutRounding" boolean in convert function

@@ -20,6 +20,7 @@ class CurrencyConverter {
     required Currency from,
     required Currency to,
     required double amount,
+    bool? withoutRounding = false,
   }) async {
     try {
       String url = "${ApiService.ENDPOINT}${from.name}/${to.name}.json";
@@ -30,6 +31,9 @@ class CurrencyConverter {
       if (resp != null) {
         double unitValue = double.parse(jsonDecode(resp.body)[to.name].toString());
         value = amount * unitValue;
+      }
+      if(withoutRounding) {
+        return double.parse(value.toString());
       }
       return double.parse(value.toStringAsFixed(2));
     } catch (err) {
