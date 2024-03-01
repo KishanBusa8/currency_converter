@@ -1,6 +1,6 @@
 name: currency_converter
 description: Live Currency converter in flutter
-version: 0.0.6s
+version: 0.0.6
 homepage: https://github.com/KishanBusa8/currency_converter
 
 environment:
