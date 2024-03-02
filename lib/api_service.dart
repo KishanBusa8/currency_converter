@@ -8,7 +8,7 @@ import 'package:http/http.dart';
 class ApiService {
   // url
   static const String ENDPOINT =
-      "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/";
+      "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/";
 
 // get amount function used for call api and return value
   static Future<Response?> getConvertedAmount(url) async {

@@ -29,9 +29,9 @@ class _MyAppState extends State<MyApp> {
     Currency myCurrency = await CurrencyConverter.getMyCurrency();
     var usdConvert = await CurrencyConverter.convert(
       from: Currency.usd,
-      to: myCurrency,
+      to: Currency.inr,
       amount: 1,
-      withoutRounding : false,
+      withoutRounding: false,
     );
     setState(() {
       usdToInr = usdConvert.toString();
