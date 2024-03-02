@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
       from: Currency.usd,
       to: myCurrency,
       amount: 1,
-      withoutRounding : false,
+      withoutRounding: true,
     );
     setState(() {
       usdToInr = usdConvert.toString();
@@ -48,29 +48,27 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Container(
           padding: const EdgeInsets.all(20),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    const Text(
-                      "1 USD = ",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
-                    ),
-                    Text(
-                      "$usdToInr ${Currency.inr.name.toUpperCase()}",
-                      style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 22,
-                          color: Colors.green),
-                    ),
-                  ],
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              const Text(
+                "1 USD = ",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              Expanded(
+                child: Text(
+                  "$usdToInr ${Currency.inr.name.toUpperCase()}",
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 22,
+                    color: Colors.green,
+                  ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

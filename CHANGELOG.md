@@ -22,3 +22,10 @@
 ## 0.0.6
 
 - Added "withoutRounding" boolean in convert function
+
+## 2.0.0
+
+- Update the api.
+- Fixed conversion issue
+- Update the SDK version
+- Update the example

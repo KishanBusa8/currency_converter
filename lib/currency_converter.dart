@@ -20,19 +20,23 @@ class CurrencyConverter {
     required Currency from,
     required Currency to,
     required double amount,
-    bool? withoutRounding = false,
+    bool withoutRounding = false,
   }) async {
     try {
-      String url = "${ApiService.ENDPOINT}${from.name}/${to.name}.json";
+      String url =
+          "${ApiService.ENDPOINT}${from == Currency.turkisL ? 'try' : from.name}.json";
       double value = 0.0;
 
       /// get the latest currency rate
       Response? resp = (await ApiService.getConvertedAmount(url));
       if (resp != null) {
-        double unitValue = double.parse(jsonDecode(resp.body)[to.name].toString());
+        double unitValue = double.parse(
+            jsonDecode(resp.body)[from == Currency.turkisL ? 'try' : from.name]
+                    [to.name]
+                .toString());
         value = amount * unitValue;
       }
-      if(withoutRounding) {
+      if (withoutRounding) {
         return double.parse(value.toString());
       }
       return double.parse(value.toStringAsFixed(2));
