@@ -1,6 +1,7 @@
 /// [Currency] enum provide all the currencies
 /// [AllCurrency] class provide all the currencies
 /// [AllCurrency.allCurrencyWithCountries] is the static array for the information about country and its currency name
+library currency_converter;
 
 enum Currency {
   inchNetwork,
