@@ -22,17 +22,20 @@ class CurrencyConverter {
     required double amount,
     bool withoutRounding = false,
   }) async {
+    double value = 0.0;
     try {
       String url =
-          "${ApiService.ENDPOINT}${from == Currency.turkisL ? 'try' : from.name}.json";
-      double value = 0.0;
+          "${ApiService.ENDPOINT}${from == Currency.turkisL ? 'try' : from == Currency.inchNetwork ? '1inch' : from.name}.json";
 
       /// get the latest currency rate
       Response? resp = (await ApiService.getConvertedAmount(url));
       if (resp != null) {
-        double unitValue = double.parse(
-            jsonDecode(resp.body)[from == Currency.turkisL ? 'try' : from.name]
-                    [to.name]
+        double unitValue =
+            double.parse(jsonDecode(resp.body)[from == Currency.turkisL
+                    ? 'try'
+                    : from == Currency.inchNetwork
+                        ? '1inch'
+                        : from.name][to.name]
                 .toString());
         value = amount * unitValue;
       }
@@ -41,10 +44,28 @@ class CurrencyConverter {
       }
       return double.parse(value.toStringAsFixed(2));
     } catch (err) {
-      if (kDebugMode) {
-        print("convert err $err");
+      String fallbackUrl =
+          "${ApiService.FALL_BACK_URL}${from == Currency.turkisL ? 'try' : from == Currency.inchNetwork ? '1inch' : from.name}.json";
+      Response? resp = (await ApiService.getConvertedAmount(fallbackUrl));
+      if (resp != null) {
+        double unitValue =
+            double.parse(jsonDecode(resp.body)[from == Currency.turkisL
+                    ? 'try'
+                    : from == Currency.inchNetwork
+                        ? '1inch'
+                        : from.name][to.name]
+                .toString());
+        value = amount * unitValue;
+        if (withoutRounding) {
+          return double.parse(value.toString());
+        }
+        return double.parse(value.toStringAsFixed(2));
+      } else {
+        if (kDebugMode) {
+          print("convert err $err");
+        }
+        return null;
       }
-      return 0.0;
     }
   }
 

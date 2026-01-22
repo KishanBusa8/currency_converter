@@ -8,21 +8,14 @@ import 'package:http/http.dart';
 class ApiService {
   // url
   static const String ENDPOINT =
-      "https://currency-api.pages.dev/v1/currencies/";
-
+      "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/";
+  static const String FALL_BACK_URL =
+      "https://latest.currency-api.pages.dev/v1/currencies/";
 // get amount function used for call api and return value
   static Future<Response?> getConvertedAmount(url) async {
-    try {
-//cal api
-      final response = await get(Uri.parse(url));
-// get response
-      return response;
-    } catch (e) {
-// catch er
-      if (kDebugMode) {
-        print("fetch get err $e");
-      }
-    }
-    return null;
+    //cal api
+    final response = await get(Uri.parse(url));
+    // get response
+    return response;
   }
 }
