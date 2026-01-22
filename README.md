@@ -1,57 +1,103 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Currency Converter
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+A powerful and easy-to-use Flutter plugin for live currency and cryptocurrency conversions.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-DESCRIPTION: A Simple Flutter plugin for converting currencies and crypto currencies live!
+[![pub package](https://img.shields.io/pub/v/currency_converter.svg)](https://pub.dev/packages/currency_converter)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Features
 
-1. Convert currencies from one to another by live rates.
-2. Convert crypto currencies too.
+*   **Live Conversion:** Convert between fiat currencies using up-to-date exchange rates.
+*   **Crypto Support:** Supports major cryptocurrencies.
+*   **Local Currency Detection:** Automatically detect the user's local currency based on their device settings.
+*   **No API Key Required:** Uses open-source APIs, so you don't need to sign up for any keys.
+*   **Flexible Rounding:** Options to round results or keep raw precision.
 
-## Getting started
+## Getting Started
 
-*Install Package to your pubspec.yaml file*
+Add the package to your `pubspec.yaml`:
 
-```
-currency_converter: ^0.0.5;
-```
-
-*Import library*
-
-```dart
-import 'package:currency_converter/Currency.dart';
-import 'package:currency_converter/currency_converter.dart';
+```yaml
+dependencies:
+  currency_converter: ^3.0.0
 ```
 
+Or run:
+
+```bash
+flutter pub add currency_converter
+```
 
 ## Usage
 
-Import package to your file where you want to use it.
+### 1. Import the package
 
 ```dart
-     Currency myCurrency = await CurrencyConverter.getMyCurrency();
-     var usdConvert = await CurrencyConverter.convert(
-      from: Currency.usd,
-      to: myCurrency,
-      amount: 1,
-    );
-
+import 'package:currency_converter/currency.dart';
+import 'package:currency_converter/currency_converter.dart';
 ```
 
-- for more checkout the example file.
+### 2. Convert Currency
 
-## Issues And feedback
-- Please file specific issues, bugs, or feature requests in our [issue tracker](https://github.com/KishanBusa8/currency_converter/issues).
+Convert a specific amount from one currency to another:
+
+```dart
+// Convert 1 USD to INR
+var inrAmount = await CurrencyConverter.convert(
+  from: Currency.usd,
+  to: Currency.inr,
+  amount: 1,
+);
+
+print("1 USD = $inrAmount INR");
+```
+
+### 3. Get Local Currency
+
+Retrieve the currency associated with the device's locale:
+
+```dart
+Currency myCurrency = await CurrencyConverter.getMyCurrency();
+print("My local currency is: ${myCurrency.name}");
+```
+
+### 4. Advanced Usage
+
+Combine methods to convert from a specific currency to the user's local currency:
+
+```dart
+// Get the user's local currency
+Currency userCurrency = await CurrencyConverter.getMyCurrency();
+
+// Convert 100 USD to the user's currency
+var convertedAmount = await CurrencyConverter.convert(
+  from: Currency.usd,
+  to: userCurrency,
+  amount: 100,
+  withoutRounding: true, // Optional: Disable rounding
+);
+
+print("100 USD = $convertedAmount ${userCurrency.name}");
+```
+
+## Supported Currencies
+
+The plugin supports a wide range of currencies including:
+*   USD (United States Dollar)
+*   EUR (Euro)
+*   GBP (British Pound)
+*   INR (Indian Rupee)
+*   JPY (Japanese Yen)
+*   ...and many cryptocurrencies like BTC, ETH, etc.
+
+## Additional Information
+
+This package uses the [currency-api](https://github.com/fawazahmed0/currency-api) for fetching exchange rates.
+
+## Issues and Feedback
+
+Please file issues, bugs, or feature requests in our [issue tracker](https://github.com/KishanBusa8/currency_converter/issues).
 
 ## Authors
-- [Kishan Busa](https://github.com/KishanBusa8)
+
+*   [Kishan Busa](https://github.com/KishanBusa8)
